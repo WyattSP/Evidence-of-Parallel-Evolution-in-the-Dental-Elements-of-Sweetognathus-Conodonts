@@ -1,6 +1,11 @@
 # Evidence-of-Parallel-Evolution-in-the-Dental-Elements-of-Sweetognathus-Conodonts
-Code and data used in the study: Evidence of Parallel Evolution in the Dental Elements of Sweetognathus Conodonts
 
+W. Petryshen<sup>1</sup>, C. M. Henderson<sup>1</sup>, K. De Baets<sup>2</sup>, E. Jarochowska<sup>2</sup> 
+<br/> <sup>1</sup> University of Calgary, Department of Geoscience, Canada 
+<br/> <sup>2</sup> Friedrich-Alexander University Erlangen-Nuremberg, GeoZentrum Nordbayern, Germany
+
+
+Code and data used in the study: Evidence of Parallel Evolution in the Dental Elements of Sweetognathus Conodonts
 
 The provided code was run in R Studio (RStudio Team, 2020; Version 1.1.423) running R Software (R Core Team 2019; Version 3.6.2).
 
