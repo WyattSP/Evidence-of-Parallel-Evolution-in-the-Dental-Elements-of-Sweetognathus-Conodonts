@@ -273,7 +273,7 @@ sd.cono1 = function(x) {
 mean.cono1 = function(x) {
   mean(Full$PC1[Species.ID == x])
 }
-#trait means to intrapspecific trait widths
+#trait means to intraspecific trait widths
 wfstat = function(x) {
   mean(Full$PC1[Species.ID == x])/sqrt(var(Full$PC1[Species.ID == x]))
 }
