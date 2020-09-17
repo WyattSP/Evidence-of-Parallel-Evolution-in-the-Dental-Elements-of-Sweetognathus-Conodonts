@@ -521,30 +521,30 @@ SD.pca.df %>% plot_ly(
 
 #Thin-spline deformations in morphospace to check for inconsistences. 
 ref4 = SD.gpa$mshape
-plotRefToTarget(ref4, SD.gpa$orpdata[,,59])
-plotRefToTarget(ref4, SD.gpa$orpdata[,,64])
-plotRefToTarget(ref4, SD.gpa$orpdata[,,65])
+geomorph::plotRefToTarget(ref4, SD.gpa$orpdata[,,59])
+geomorph::plotRefToTarget(ref4, SD.gpa$orpdata[,,64])
+geomorph::plotRefToTarget(ref4, SD.gpa$orpdata[,,65])
 #33_5
-plotRefToTarget(ref4, SD.gpa$orpdata[,,32])
+geomorph::plotRefToTarget(ref4, SD.gpa$orpdata[,,32])
 
 #33
-plotRefToTarget(ref4, SD.gpa$orpdata[,,5])
+geomorph::plotRefToTarget(ref4, SD.gpa$orpdata[,,5])
 #15
-plotRefToTarget(ref4, SD.gpa$orpdata[,,6])
+geomorph::plotRefToTarget(ref4, SD.gpa$orpdata[,,6])
 #31
-plotRefToTarget(ref4, SD.gpa$orpdata[,,56])
+geomorph::plotRefToTarget(ref4, SD.gpa$orpdata[,,56])
 #15
-plotRefToTarget(ref4, SD.gpa$orpdata[,,1])
+geomorph::plotRefToTarget(ref4, SD.gpa$orpdata[,,1])
 #20
-plotRefToTarget(ref4, SD.gpa$orpdata[,,16])
+geomorph::plotRefToTarget(ref4, SD.gpa$orpdata[,,16])
 #33_5
-plotRefToTarget(ref4, SD.gpa$orpdata[,,45])
+geomorph::plotRefToTarget(ref4, SD.gpa$orpdata[,,45])
 #38
-plotRefToTarget(ref4, SD.gpa$orpdata[,,62])
+geomorph::plotRefToTarget(ref4, SD.gpa$orpdata[,,62])
 #38_2
-plotRefToTarget(ref4, SD.gpa$orpdata[,,6])
+geomorph::plotRefToTarget(ref4, SD.gpa$orpdata[,,6])
 #39_3
-plotRefToTarget(ref4, SD.gpa$orpdata[,,38])
+geomorph::plotRefToTarget(ref4, SD.gpa$orpdata[,,38])
 
 #Anova and Tukey's Post Hoc Test for full data set. Null hypothesis is that there is no difference between specimen groups means.
 
