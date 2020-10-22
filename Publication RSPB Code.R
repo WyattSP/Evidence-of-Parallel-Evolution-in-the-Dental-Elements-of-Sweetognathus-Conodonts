@@ -210,10 +210,10 @@ S.gpa <- gpagen(
                   #install.packages("devtools")
                   #library(devtools)
                   #install_version("geomorph", version = "3.2.0", repos = "http://cran.us.r-project.org")
-#If this problem is presistant, download RDS file of saved results with below hashed code
-                  #S.pca <– readRDS("S.pca.rds")
-                  
+#If this problem is presistant, download RDS file of saved results with below hashed code (line 216)
+                   
 S.pca <- gm.prcomp(S.gpa$coords)
+#S.pca <- readRDS("S.pca.rds")
 summary(S.pca)
 plot(S.pca)
 
@@ -539,7 +539,7 @@ plot(S.pca)
     coord_fixed() +
     labs(color = "Species", x = "PC 1", y = "PC 2") +
     theme_minimal() + 
-    labs(x = "PC 1: 79.11%", y = "PC 2: 9.08%")+
+    labs(x = "PC 1: 79.12%", y = "PC 2: 9.08%")+
     scale_x_continuous(breaks = seq(-0.8,0.8,by = 0.2))
   
   orca(confidenceplot, "confidenceplot.svg")}
@@ -553,29 +553,75 @@ ds4 <- plotRefToTarget(mshape(S.pca$A[,,]), S.pca$shapes$shapes.PC2$min)
 
 #Clustering of species to establish which are most similar
 {
-mean.pc1 <- function(x,y){
-  mean(S.pca$x[,1][Denticle.ID == x & Species.ID == y])
-}
-mean.pc2 <- function(x,y){
-  mean(S.pca$x[,2][Denticle.ID == x & Species.ID == y])
-}
-mean.pc3 <- function(x,y){
-  mean(S.pca$x[,3][Denticle.ID == x & Species.ID == y])
-}
-pc1.mean <- function(y){
-  sapply(Dent[-9], mean.pc1, y = y)
-}
-pc2.mean <- function(y){
-  sapply(Dent[-9], mean.pc2, y = y)
-}
-pc3.mean <- function(y){
-  sapply(Dent[-9], mean.pc3, y = y)
-}
-mSPC1 = sapply(Species, pc1.mean)
-mSPC2 = sapply(Species, pc2.mean)
-mSPC3 = sapply(Species, pc3.mean)
-y.1 = pvclust(mSPC1*(79.116) + mSPC2*(9.078) + mSPC3*(6.190),method.hclust= "ward.D2", method.dist = "euclidean", iseed = 1, nboot = 9999)
-plot(y.1)
+#Means Clustering
+  mean.pc1 <- function(x,y){
+    mean(S.pca$x[,1][Denticle.ID == x & Species.ID == y])
+  }
+  mean.pc2 <- function(x,y){
+    mean(S.pca$x[,2][Denticle.ID == x & Species.ID == y])
+  }
+  mean.pc3 <- function(x,y){
+    mean(S.pca$x[,3][Denticle.ID == x & Species.ID == y])
+  }
+  mean.pc4 <- function(x,y){
+    mean(S.pca$x[,4][Denticle.ID == x & Species.ID == y])
+  }
+  mean.pc5 <- function(x,y){
+    mean(S.pca$x[,5][Denticle.ID == x & Species.ID == y])
+  }
+  mean.pc6 <- function(x,y){
+    mean(S.pca$x[,6][Denticle.ID == x & Species.ID == y])
+  }
+  mean.pc7 <- function(x,y){
+    mean(S.pca$x[,7][Denticle.ID == x & Species.ID == y])
+  }
+  mean.pc8 <- function(x,y){
+    mean(S.pca$x[,8][Denticle.ID == x & Species.ID == y])
+  }
+  mean.pc9 <- function(x,y){
+    mean(S.pca$x[,9][Denticle.ID == x & Species.ID == y])
+  }
+  
+  pc1.mean <- function(y){
+    sapply(Dent[-9], mean.pc1, y = y)
+  }
+  pc2.mean <- function(y){
+    sapply(Dent[-9], mean.pc2, y = y)
+  }
+  pc3.mean <- function(y){
+    sapply(Dent[-9], mean.pc3, y = y)
+  }
+  pc4.mean <- function(y){
+    sapply(Dent[-9], mean.pc4, y = y)
+  }
+  pc5.mean <- function(y){
+    sapply(Dent[-9], mean.pc5, y = y)
+  }
+  pc6.mean <- function(y){
+    sapply(Dent[-9], mean.pc6, y = y)
+  }
+  pc7.mean <- function(y){
+    sapply(Dent[-9], mean.pc7, y = y)
+  }
+  pc8.mean <- function(y){
+    sapply(Dent[-9], mean.pc8, y = y)
+  }
+  pc9.mean <- function(y){
+    sapply(Dent[-9], mean.pc9, y = y)
+  }
+  
+  mSPC1 = sapply(Species, pc1.mean)
+  mSPC2 = sapply(Species, pc2.mean)
+  mSPC3 = sapply(Species, pc3.mean)
+  mSPC4 = sapply(Species, pc4.mean)
+  mSPC5 = sapply(Species, pc5.mean)
+  mSPC6 = sapply(Species, pc6.mean)
+  mSPC7 = sapply(Species, pc7.mean)
+  mSPC8 = sapply(Species, pc8.mean)
+  mSPC9 = sapply(Species, pc9.mean)
+  
+  y.1 = pvclust(mSPC1*(79.116) + mSPC2*(9.078) + mSPC3*(6.190) + mSPC4*(2.184) + mSPC5*(0.951) + mSPC6*(0.700) + mSPC7*(0.341) + mSPC8*(0.276) + mSPC9*(0.270) ,method.hclust= "ward.D2", method.dist = "euclidean", iseed = 1, nboot = 9999)
+  plot(y.1)
 }
 
 ###Qunatify phenotypic trajectories and comparison between trait spaces
