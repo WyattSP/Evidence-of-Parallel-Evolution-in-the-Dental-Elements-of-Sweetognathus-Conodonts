@@ -2,8 +2,8 @@
 #author: "Wyatt Petryshen"
 #date: '2020-09-24'
 
-#Required packages for landmark selection and procrustes superimposition, and some data visulization later on. Analysis was run using following versions of each package: Momocs (1.2.9), abind (1.4-5), Morpho (2.7), tidyverse (1.3.0), plotly (4.9.1), car (3.0-7). 
-library(Momocs); library(abind); library(tidyverse); library(plotly); library(car); library(ggplot2); library(pvclust)
+#Required packages for landmark selection and Procrustes superimposition, and some data visulization later on. Analysis was run using following versions of each package: Momocs (1.2.9), abind (1.4-5), Morpho (2.7), tidyverse (1.3.0), plotly (4.9.1), car (3.0-7). 
+library(Momocs); library(abind); library(tidyverse); library(plotly); library(car); library(ggplot2); library(pvclust); library(geomorph); library(RANN); library(RRPP); library(pbapply)
 setwd()
 #Import all jpegs into R studio still using Momocs (the program doesn't fuck this up which is nice, and provides a outline 1 pixel thick... for the most part)
 #First step is to import data into R markdown document, then gather information of ID and denticle positions prior to procrustes superimposition.
