@@ -206,6 +206,13 @@ S.gpa <- gpagen(
 ) 
 
 #PCA of the aligned points
+#If the function gm.prcomp cannot be located try downloading an older version of geomorph using the hashed code below
+                  #install.packages("devtools")
+                  #library(devtools)
+                  #install_version("geomorph", version = "3.2.0", repos = "http://cran.us.r-project.org")
+#If this problem is presistant, download RDS file of saved results with below hashed code
+                  #S.pca <– readRDS("S.pca.rds")
+                  
 S.pca <- gm.prcomp(S.gpa$coords)
 summary(S.pca)
 plot(S.pca)
